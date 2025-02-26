@@ -1,9 +1,9 @@
-import { Users } from "../../models/users.model.js"
+import { Orders } from "../../models/orders.model.js"
 
-export const deleteUser = async (req, res) => {
+export const deleteOrder = async (req, res) => {
     const { id } = req.body
     try {
-        await Users.findOneAndDelete({id})
+        await Orders.findOneAndDelete({id})
         res.send().status(200)
     } catch (error) {
         res.send().status(400);

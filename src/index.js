@@ -1,33 +1,33 @@
 import express from 'express';
 import mongoose from 'mongoose';
-// import { userRouter } from './routers/user.routes.js';
 import { userRouter } from './routers/User.routes.js';
+import { foodRouter } from './routers/food.router.js';
 import cors from "cors"
+import dotenv from "dotenv"
+import { categoryRouter } from './routers/category.router.js';
+import { orderRouter } from './routers/order.router.js';
+dotenv.config();
 
-
-const url = "mongodb+srv://itsmebuya:iz6sl4GPugIQBJX3@cluster0.42tlq.mongodb.net/food_delivery?retryWrites=true&w=majority&appName=Cluster0"
-
+const databaseUrl = process.env.DATABASE_URL;
+const app = express()
+const port = 999;
 const connectDB = async () => {
-    await mongoose.connect(url)
     try {
-        console.log("success");
-
+        await mongoose.connect(databaseUrl)
+        console.log("Database connected");
     } catch (error) {
         console.log("Error occured ", error);
     }
 }
 connectDB();
 
-const app = express()
-const port = 999;
 app.use(express.json())
 app.use(cors())
-app.use("/users", userRouter )
 
-app.use("/", (req, res) => {
-    res.send("this is test")
-})
-
+app.use("/users", userRouter)
+app.use("/foods", foodRouter)
+app.use("/categories", categoryRouter)
+app.use("/orders", orderRouter)
 
 app.listen(port, () => {
     console.log(`example app listening on port ${port}`)

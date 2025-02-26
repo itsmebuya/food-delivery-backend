@@ -1,9 +1,9 @@
-import { Users } from "../../models/users.model.js"
+import { Categories } from "../../models/categories.model.js"
 
-export const deleteUser = async (req, res) => {
+export const deleteCategory = async (req, res) => {
     const { id } = req.body
     try {
-        await Users.findOneAndDelete({id})
+        await Categories.findOneAndDelete({id})
         res.send().status(200)
     } catch (error) {
         res.send().status(400);
