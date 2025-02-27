@@ -1,16 +1,16 @@
 import { Foods } from "../../models/foods.model.js"
 
 export const updateFood = async (req, res) => {
-    const {  id, foodName, price, image, ingredients, category } = req.body
+    const { id, foodName, price, image, ingredients, categoryId } = req.body
     try {
-        await Foods.findOneAndUpdate(
-            { id },
+        await Foods.findByIdAndUpdate(
+            id,
             {
                 foodName: foodName,
                 price: price,
                 image: image,
                 ingredients: ingredients,
-                category: category
+                category: categoryId
             },
             { new: true })
         console.log("food updated");

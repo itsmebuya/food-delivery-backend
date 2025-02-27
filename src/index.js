@@ -6,6 +6,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import { categoryRouter } from './routers/category.router.js';
 import { orderRouter } from './routers/order.router.js';
+import { foodOrderItemRouter } from './routers/foodOrderItem.router.js';
 dotenv.config();
 
 const databaseUrl = process.env.DATABASE_URL;
@@ -28,6 +29,7 @@ app.use("/users", userRouter)
 app.use("/foods", foodRouter)
 app.use("/categories", categoryRouter)
 app.use("/orders", orderRouter)
+app.use("/foodOrderItems", foodOrderItemRouter)
 
 app.listen(port, () => {
     console.log(`example app listening on port ${port}`)

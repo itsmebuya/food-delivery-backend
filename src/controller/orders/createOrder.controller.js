@@ -1,12 +1,12 @@
 import { Orders } from "../../models/orders.model.js";
 
 export const createOrder = async (req, res) => {
-    const { user, totalPrice, foodOrderItems, status } = req.body;
+    const { userId, totalPrice, foodOrderItems, status } = req.body;
     try {
         await Orders.create({
-            user: user,
+            user: userId,
             totalPrice: totalPrice,
-            foodOrderItems: foodOrderItems,
+            foodOrderItems: [foodOrderItems],
             status: status
         })
         res.send("Category created").status(201)

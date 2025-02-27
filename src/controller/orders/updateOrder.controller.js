@@ -3,8 +3,8 @@ import { Orders } from "../../models/orders.model.js"
 export const updateOrder = async (req, res) => {
     const { id, foodOrderItems, status } = req.body
     try {
-        await Orders.findOneAndUpdate(
-            { id },
+        await Orders.findByIdAndUpdate(
+            id,
             {
                 foodOrderItems: foodOrderItems,
                 status: status

@@ -3,8 +3,8 @@ import { Users } from "../../models/users.model.js"
 export const updateUser = async (req, res) => {
     const { id, email, address, phoneNumber } = req.body
     try {
-        await Users.findOneAndUpdate(
-            { id },
+        await Users.findByIdAndUpdate(
+            id,
             {
                 email: email,
                 address: address,

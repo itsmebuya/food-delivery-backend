@@ -3,7 +3,7 @@ import { Foods } from "../../models/foods.model.js"
 export const deleteFood = async (req, res) => {
     const { id } = req.body
     try {
-        await Foods.findOneAndDelete({id})
+        await Foods.findByIdAndDelete(id)
         res.send().status(200)
     } catch (error) {
         res.send().status(400);

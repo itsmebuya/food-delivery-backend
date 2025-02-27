@@ -12,7 +12,7 @@ export const createUser = async (req, res) => {
             role: role,
             phoneNumber: phoneNumber,
             address: address,
-            orderFoods: orderFoods,
+            orderFoods: [orderFoods],
             ttl: ttl,
             isVerified: isVeried
         })
