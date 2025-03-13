@@ -10,7 +10,8 @@ import { ValidateUserId } from '../middleware/users/validate.user.id.js';
 
 export const userRouter = express.Router();
 
-userRouter.get("/", ValidateUserId, isAdmin, getUser);
+// userRouter.get("/", ValidateUserId, isAdmin, getUser);
+userRouter.get("/", getUser);
 userRouter.post("/", isValid, checkEmail, createUser);
 userRouter.put("/", updateUser);
 userRouter.delete("/",ValidateUserId, isAdmin, deleteUser);
