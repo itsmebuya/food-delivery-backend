@@ -1,9 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import { userRouter } from './routers/User.routes.js';
-import { foodRouter } from './routers/food.router.js';
 import cors from "cors"
 import dotenv from "dotenv"
+import { userRouter } from './routers/User.routes.js';
+import { foodRouter } from './routers/food.router.js';
 import { categoryRouter } from './routers/category.router.js';
 import { orderRouter } from './routers/order.router.js';
 import { foodOrderItemRouter } from './routers/foodOrderItem.router.js';
