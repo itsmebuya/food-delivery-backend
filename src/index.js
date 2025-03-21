@@ -7,6 +7,7 @@ import { foodRouter } from './routers/food.router.js';
 import { categoryRouter } from './routers/category.router.js';
 import { orderRouter } from './routers/order.router.js';
 import { foodOrderItemRouter } from './routers/foodOrderItem.router.js';
+import { loginRouter } from './routers/login.router.js';
 dotenv.config();
 
 const databaseUrl = process.env.DATABASE_URL;
@@ -30,6 +31,7 @@ app.use("/foods", foodRouter)
 app.use("/categories", categoryRouter)
 app.use("/orders", orderRouter)
 app.use("/foodOrderItems", foodOrderItemRouter)
+app.use("/login", loginRouter)
 
 app.listen(port, () => {
     console.log(`example app listening on port ${port}`)
