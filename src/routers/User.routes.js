@@ -12,6 +12,7 @@ export const userRouter = express.Router();
 
 // userRouter.get("/", ValidateUserId, isAdmin, getUser);
 userRouter.get("/", getUser);
-userRouter.post("/", isValid, checkEmail, createUser);
+userRouter.post("/", createUser);
+userRouter.post("/check", checkEmail)
 userRouter.put("/", updateUser);
 userRouter.delete("/",ValidateUserId, isAdmin, deleteUser);

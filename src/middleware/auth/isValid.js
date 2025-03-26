@@ -11,7 +11,7 @@ export const isValid = (req, res, next) => {
             next();
         }
     } catch (error) {
-        res.send("Server error").status(500)
+        res.send("Server error (is valid)").status(500)
         console.log(error);
     }
 }
