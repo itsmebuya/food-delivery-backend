@@ -16,8 +16,8 @@ export const loginAuthentication = async (req, res) => {
                 const token = jwt.sign({
                     exp: Math.floor(Date.now() / 1000) + 60 * 60, date: user
                 }, decodePass);
-                const role = user.role
-                res.status(200).json({ success: true, message: "logged in", token: token, role: role });
+                const userData = {email: user.email , role: user.role}
+                res.status(200).json({ success: true, message: "logged in", token: token, userData: userData });
             } else {
                 res.status(400).json({ success: false, message: "password incorrect" })
             }
