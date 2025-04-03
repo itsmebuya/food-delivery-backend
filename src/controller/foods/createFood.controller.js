@@ -2,8 +2,6 @@ import { Foods } from "../../models/foods.model.js";
 
 export const createFood = async (req, res) => {
     const {foodName, price, image, ingredients, category} = req.body;
-    console.log("req",req.body);
-    
     try {
         await Foods.create({
             foodName: foodName,
