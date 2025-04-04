@@ -2,12 +2,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from "cors"
 import dotenv from "dotenv"
-import { userRouter } from './routers/User.routes.js';
-import { foodRouter } from './routers/food.router.js';
-import { categoryRouter } from './routers/category.router.js';
-import { orderRouter } from './routers/order.router.js';
-import { foodOrderItemRouter } from './routers/foodOrderItem.router.js';
-import { loginRouter } from './routers/login.router.js';
+import { userRouter } from './src/routers/User.routes.js';
+import { foodRouter } from './src/routers/food.router.js';
+import { categoryRouter } from './src/routers/category.router.js';
+import { orderRouter } from './src/routers/order.router.js';
+import { foodOrderItemRouter } from './src/routers/foodOrderItem.router.js';
+import { loginRouter } from './src/routers/login.router.js';
 dotenv.config();
 
 const databaseUrl = process.env.DATABASE_URL;
